@@ -16,7 +16,8 @@ dataverse_files*/
 # =====================
 indices_chatbot/
 *.index
-
+*_docs.json
+medias_cultura.json
 # =====================
 # Notebooks temporários
 # =====================
