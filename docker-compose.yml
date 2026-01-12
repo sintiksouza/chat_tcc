@@ -1,0 +1,56 @@
+version: "2"
+
+networks:
+  tieta:
+    external: true
+    name: tieta
+
+  caddy:
+    external: true
+    name: caddy
+
+services:
+  tieta_sadai-chat_jup:
+    image: tieta/sadai-chat:1.0.1
+    container_name: tieta_sadai-chat_jup
+    command: "jupyter notebook --port=${JUPYTER_PORT} --no-browser --ip=0.0.0.0 --allow-root"
+    #restart: unless-stopped
+#    deploy:
+#      resources:
+#        reservations:
+#          devices:
+#            - capabilities: [gpu]
+    environment:
+      - JUPYTER_TOKEN=${JUPYTER_TOKEN}
+    volumes:
+      - ./:/src
+      - ${PATH_DATA}:/src/data
+    ports:
+      - ${JUPYTER_PORT}:${JUPYTER_PORT}
+    networks:
+      - caddy
+      - tieta
+    env_file:
+    - .env
+
+#   tieta_sadai-chat:
+#     image: tieta/sadai-chat:1.0.1
+#     container_name: tieta_sadai-chat
+#     command: "uvicorn app.main:app --reload --host 0.0.0.0 --port ${APP_PORT}"
+#     restart: unless-stopped
+#     # deploy:
+#     #   resources:
+#     #     reservations:
+#     #       devices:
+#     #         - capabilities: [gpu]
+#     environment:
+#       - XDG_RUNTIME_DIR=""
+#     volumes:
+#       - ./:/src
+#  #     - ./hf_cache:/root/.cache/huggingface/hub
+#     ports:
+#       - ${APP_PORT}:${APP_PORT}
+#     networks:
+#       - caddy
+#     env_file:
+#     - .env 

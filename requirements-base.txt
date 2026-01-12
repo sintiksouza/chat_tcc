@@ -1,0 +1,16 @@
+
+nltk
+fastapi
+faiss-cpu
+uvicorn[standard]
+requests 
+jupyter
+pandas
+python-multipart
+#docarray==0.21.0
+docarray
+sentence_transformers
+numpy 
+
+
+

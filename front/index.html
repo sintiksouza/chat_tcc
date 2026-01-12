@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chatbot Abacaxi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>Chatbot</h2>
+
+      <nav class="nav">
+        <button class="nav-item" data-cat="duvidas">Dúvidas frequentes</button>
+        <button class="nav-item" data-cat="doencas">Doenças</button>
+        <button class="nav-item" data-cat="tratamentos">Tratamentos</button>
+        <button class="nav-item" data-cat="cultivo">Dicas de cultivo</button>
+        <button class="nav-item" data-cat="campo">Relatos do campo</button>
+      </nav>
+
+      <!-- Exemplos -->
+      <div class="sidebar-block">
+        <div class="sidebar-title">Exemplos</div>
+
+        <!-- Mensagem inicial -->
+        <div id="examplesHint" class="examples-hint">
+          Selecione uma categoria para ver exemplos de perguntas.
+        </div>
+
+        <!-- Chips (ocultos inicialmente) -->
+        <div id="chips" class="chips hidden"></div>
+      </div>
+    </aside>
+
+    <!-- Chat -->
+    <main class="chat">
+      <header class="chat-header">
+        <div>
+          <div class="chat-title">Assistente Agrícola</div>
+          <div id="catLabel" class="chat-subtitle">
+            
+          </div>
+        </div>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="message bot">
+          <div class="bubble">
+             Olá! Sou o assistente agrícola. Como posso ajudar?
+          </div>
+        </div>
+      </div>
+
+      <div class="input-area">
+        <input id="question" type="text" placeholder="Faça sua pergunta" />
+        <button id="sendBtn">Enviar</button>
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

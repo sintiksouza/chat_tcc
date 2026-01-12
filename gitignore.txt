@@ -1,0 +1,20 @@
+# segredos
+.env
+
+# python
+__pycache__/
+*.pyc
+
+# artefatos gerados
+indices/
+indices_chatbot/
+*.faiss
+*.index
+*_docs.json
+medias_cultura.json
+
+# arquivos pesados (não subir)
+bulk/
+book/
+
+

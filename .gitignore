@@ -1,0 +1,30 @@
+videos
+hf_cache
+*__pycache__*
+.*
+
+!.gitignore
+# =====================
+# Dados / corpus
+# =====================
+book/
+bulk/
+dataverse_files*/
+
+# =====================
+# Índices gerados
+# =====================
+indices_chatbot/
+*.index
+
+# =====================
+# Notebooks temporários
+# =====================
+*copi*.ipynb
+.ipynb_checkpoints/
+
+# =====================
+# Cache Python
+# =====================
+__pycache__/
+*.pyc
